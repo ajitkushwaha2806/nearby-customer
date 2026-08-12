@@ -38,7 +38,7 @@ export default function LoginPage() {
     });
 
     return (
-        <div className="flex min-h-[100dvh] flex-col bg-white font-poppins sm:items-center sm:justify-center sm:bg-slate-50 sm:p-4">
+        <div className="flex min-h-[90vh] flex-col bg-white font-poppins sm:items-center sm:justify-center sm:bg-slate-50 sm:p-4">
             <div className="flex w-full max-w-md flex-1 flex-col justify-center px-6 py-12 sm:flex-none sm:rounded-2xl sm:bg-white/90 sm:p-10 sm:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] sm:backdrop-blur-xl">
                 <div className="mb-8 flex flex-col items-center text-center">
                     <img
