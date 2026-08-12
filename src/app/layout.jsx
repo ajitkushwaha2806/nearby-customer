@@ -1,9 +1,9 @@
 import "./globals.css";
+import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 import { fontPoppins } from "@/constants/fonts";
 import ThemeProvider from "@/components/theme-provider";
 import QueryProvider from "@/components/query-provider";
-
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 export default function RootLayout({ children }) {
@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
           <ThemeProvider>
             <TooltipProvider>
               {children}
+              <Toaster richColors position="top-center" />
             </TooltipProvider>
           </ThemeProvider>
         </QueryProvider>

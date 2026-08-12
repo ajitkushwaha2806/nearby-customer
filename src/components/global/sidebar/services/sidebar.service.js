@@ -1,4 +1,4 @@
-import { Home, ShoppingBag, User, Settings, Heart, Clock } from "lucide-react";
+import { Home, ShoppingBag, User, Settings, Heart, Clock, HomeIcon, UtensilsIcon, ShoppingCartIcon, HeadsetIcon, UserIcon } from "lucide-react";
 
 export const SidebarService = {
     getNavItems: () => [
@@ -38,5 +38,39 @@ export const SidebarService = {
             icon: Settings,
             href: "/settings",
         }
+    ],
+
+    bottomNavItems: () => [
+        {
+            id: "home",
+            label: "Home",
+            icon: HomeIcon,
+            href: "/home",
+        },
+        {
+            id: "menu",
+            label: "Menu",
+            icon: UtensilsIcon,
+            href: "/menu",
+        },
+        {
+            id: "cart",
+            label: "Cart",
+            icon: ShoppingCartIcon,
+            href: "/cart",
+        },
+        {
+            id: "support",
+            label: "Support",
+            icon: HeadsetIcon,
+            href: "/support",
+        },
+        {
+            id: "profile",
+            label: "Profile",
+            icon: UserIcon,
+            href: "/profile",
+        },
     ]
+
 };

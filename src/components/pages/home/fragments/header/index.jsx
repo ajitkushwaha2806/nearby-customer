@@ -1,8 +1,8 @@
 import { Menu } from "lucide-react";
-import { HeaderActionButton } from "./actions";
 import { HeaderBrand } from "./brand";
-import { FilterButton } from "./filter-button";
 import { SearchBar } from "./search-bar";
+import { HeaderActionButton } from "./actions";
+import { FilterButton } from "./filter-button";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export function MenuButton({ onClick }) {
@@ -21,7 +21,6 @@ export function ResponsiveHeader({
     brand,
     actions = [],
     showMenu = true,
-    onMenuClick,
     searchPlaceholder = "Search...",
     searchValue = "",
     onSearchChange,
@@ -36,7 +35,7 @@ export function ResponsiveHeader({
 }) {
     return (
         <header
-            className={`sticky top-0 z-50 w-full border-b border-gray-100 bg-white/90 backdrop-blur-xl transition-all duration-300 ${className}`}
+            className={`sticky top-0 z-50 w-full bg-white/80 backdrop-blur-xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] transition-all duration-300 ${className}`}
         >
             <div
                 className={`mx-auto w-full max-w-screen-xl px-4 py-3 sm:px-6 lg:px-8 ${containerClassName}`}

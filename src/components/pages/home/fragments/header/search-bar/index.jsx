@@ -1,7 +1,4 @@
-import {
-    Search,
-    ArrowRight,
-} from "lucide-react";
+import { Search, ArrowRight } from "lucide-react";
 
 export function SearchBar({
     placeholder = "Search...",
@@ -23,7 +20,7 @@ export function SearchBar({
         min-w-0
         flex-1
         items-center
-        rounded-[22px]
+        rounded-[10px]
         bg-white
         px-4
         shadow-sm

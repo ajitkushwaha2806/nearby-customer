@@ -31,9 +31,11 @@ const Home = () => {
 
     return (
         <SidebarProvider>
-            <AppSidebar brand={brandInfo} />
+            <div className="md:hidden">
+                <AppSidebar brand={brandInfo} />
+            </div>
             <SidebarInset>
-                <div className="w-full mx-auto min-h-screen bg-background pb-20">
+                <div className="w-full mx-auto min-h-screen bg-slate-50 pb-20">
                     <ResponsiveHeader
                         brand={brandInfo}
                         actions={[
