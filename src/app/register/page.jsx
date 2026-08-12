@@ -36,7 +36,7 @@ export default function RegisterPage() {
                     <img
                         src="/assets/images/food-delivery.png"
                         alt="Join Us"
-                        className="w-full max-w-[240px] object-contain py-4"
+                        className="w-full max-w-[180px] object-contain py-4"
                     />
                 </div>
 

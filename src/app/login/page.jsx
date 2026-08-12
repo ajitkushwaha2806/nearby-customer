@@ -44,12 +44,8 @@ export default function LoginPage() {
                     <img
                         src="/assets/images/food-delivery.png"
                         alt="Welcome Back"
-                        className="w-full max-w-[240px] object-contain py-4"
+                        className="w-full max-w-[200px] object-contain py-4"
                     />
-                    <h1 className="mt-2 text-[26px] font-bold tracking-tight text-neutral-900">Welcome Back</h1>
-                    <p className="mt-2 text-sm text-neutral-500">
-                        Please enter your details to sign in
-                    </p>
                 </div>
 
                 <form onSubmit={formik.handleSubmit} className="space-y-6">
