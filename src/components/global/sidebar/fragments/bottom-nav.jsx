@@ -20,15 +20,15 @@ export default function BottomNav({ active: activeProp, onChange }) {
     }
 
     return (
-        <div className="fixed inset-x-0 bottom-0 z-50 flex justify-center px-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+        <div className="fixed inset-x-0 bottom-0 z-50 flex justify-center">
             <nav
                 aria-label="Primary"
-                className="relative w-full max-w-sm rounded-b-[28px] border border-black/5 bg-white/95 pb-2 pt-2 shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
+                className="relative w-full max-w-sm border border-black/5 bg-white/95 pb-0 pt-2 shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/95"
             >
                 <div
                     className="absolute top-0 h-[3px] rounded-full bg-orange-500 transition-all duration-300 ease-out"
                     style={{
-                        width: `${100 / TABS.length}%`,
+                        width: `${100 / TABS.length + 1}%`,
                         left: `${(100 / TABS.length) * activeIndex}%`,
                     }}
                 >
