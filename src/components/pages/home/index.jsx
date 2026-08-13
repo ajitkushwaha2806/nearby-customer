@@ -8,10 +8,10 @@ import PromoCarousel from "./fragments/promo-carousel"
 import CategoryScrollbar from "./fragments/category-scollbar"
 import { MenuLayout } from "./fragments/menu-layout/fragments"
 import BottomNav from "../../global/sidebar/fragments/bottom-nav";
-import { useSelector } from "react-redux";
+import { useUser } from "@/hooks/useUser";
 
 const Home = () => {
-    const user = useSelector((state) => state.user.user);
+    const { user } = useUser();
 
     const brandInfo = {
         greeting: (
@@ -39,7 +39,7 @@ const Home = () => {
             </div>
             <SidebarInset>
                 <div className="w-full mx-auto min-h-screen bg-slate-50 pb-20">
-                    {/* <ResponsiveHeader
+                    <ResponsiveHeader
                         brand={brandInfo}
                         actions={[
                             {
@@ -73,7 +73,7 @@ const Home = () => {
                         }}
                     />
 
-                    <PromoCarousel />
+                    {/* <PromoCarousel />
                     <CategoryScrollbar />
                     <MenuLayout.V2 /> */}
                 </div>

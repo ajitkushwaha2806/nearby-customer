@@ -4,7 +4,7 @@ import { ArrowLeft, Home } from "lucide-react";
 
 export default function NotFound() {
     return (
-        <div className="flex min-h-[100svh] flex-col items-center justify-center bg-background px-6 py-12 font-poppins text-slate-900">
+        <div className="flex min-h-[90svh] flex-col items-center justify-center bg-background px-6 py-12 font-poppins text-slate-900">
             <div className="flex w-full max-w-md flex-col items-center text-center">
                 <div className="relative mb-8 transition-transform duration-300 hover:scale-105">
                     <img
@@ -13,13 +13,6 @@ export default function NotFound() {
                         className="mx-auto w-full max-w-[280px] object-contain drop-shadow-[0_8px_24px_rgba(249,115,22,0.15)]"
                     />
                 </div>
-
-                <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
-                    Oops nothing found !
-                </h1>
-                <p className="mt-4 text-sm font-medium text-slate-500 max-w-sm">
-                    Oops! The page you are looking for doesn't exist, has been removed, or has changed names.
-                </p>
 
                 <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row">
                     <button
