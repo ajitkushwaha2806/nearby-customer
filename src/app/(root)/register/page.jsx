@@ -55,8 +55,8 @@ export default function RegisterPage() {
                 <div className="mb-4 sm:mb-8 flex flex-col items-center text-center">
                     <img
                         src="/assets/images/food-delivery.png"
-                        alt="Join Us"
-                        className="w-full max-w-[140px] sm:max-w-[180px] object-contain py-2 sm:py-4"
+                        alt="Welcome Back"
+                        className="w-full max-w-[200px] object-contain py-4"
                     />
                 </div>
 

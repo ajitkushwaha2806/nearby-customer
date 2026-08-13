@@ -48,8 +48,8 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="flex min-h-[100svh] flex-col bg-white font-poppins sm:items-center sm:justify-center sm:bg-slate-50 sm:p-4">
-            <div className="flex w-full max-w-md flex-1 flex-col justify-center px-6 py-6 sm:flex-none sm:rounded-2xl sm:bg-white/90 sm:p-10 sm:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] sm:backdrop-blur-xl">
+        <div className="flex min-h-[100svh] flex-col bg-background font-poppins sm:items-center sm:justify-center sm:p-4">
+            <div className="flex w-full max-w-md flex-1 flex-col justify-center bg-card px-6 py-6 sm:flex-none sm:rounded-2xl sm:p-10 sm:shadow-sm">
                 <div className="mb-4 sm:mb-8 flex flex-col items-center text-center">
                     <img
                         src="/assets/images/food-delivery.png"
@@ -61,8 +61,8 @@ export default function LoginPage() {
                 <form onSubmit={formik.handleSubmit} className="space-y-6">
                     <div className="space-y-2">
                         <div className="relative group">
-                            <div className="absolute -top-2.5 left-3 z-10 bg-white px-1.5 sm:bg-white">
-                                <span className={`text-[11px] font-semibold uppercase tracking-wider transition-colors ${formik.touched.phone && formik.errors.phone ? "text-red-500" : "text-slate-500 group-focus-within:text-orange-600"}`}>
+                            <div className="absolute -top-2.5 left-3 z-10 bg-card px-1.5">
+                                <span className={`text-[11px] font-semibold uppercase tracking-wider transition-colors ${formik.touched.phone && formik.errors.phone ? "text-red-500" : "text-muted-foreground group-focus-within:text-primary"}`}>
                                     Phone Number
                                 </span>
                             </div>

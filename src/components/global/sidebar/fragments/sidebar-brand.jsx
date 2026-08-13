@@ -10,10 +10,10 @@ export function SidebarBrand({ brand, href = "/" }) {
                 <SidebarMenuButton
                     size="lg"
                     render={<a href={href} />}
-                    className="group relative flex w-full items-center gap-3 overflow-hidden rounded-xl px-2 py-3 transition-colors duration-200 hover:bg-sidebar-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50 focus-visible:ring-offset-2"
+                    className="group relative flex h-auto w-full items-center gap-3 rounded-md border border-gray-200/80 bg-white px-3.5 py-3 shadow-sm transition-all duration-200 hover:bg-gray-50/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/30"
                 >
                     {brand.logo ? (
-                        <div className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-sidebar-accent/50 ring-1 ring-black/5 transition-transform duration-200 group-hover:scale-105">
+                        <div className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white ring-1 ring-black/5 transition-transform duration-200 group-hover:scale-105">
                             {typeof brand.logo === "string" ? (
                                 <img
                                     src={brand.logo}
@@ -31,15 +31,15 @@ export function SidebarBrand({ brand, href = "/" }) {
                             </div>
                         )
                     )}
-
-                    <div className="flex min-w-0 flex-1 flex-col justify-center">
+ 
+                    <div className="flex min-w-0 flex-1 flex-col justify-center gap-0.5">
                         {brand.name && (
-                            <span className="truncate text-base font-bold tracking-tight text-sidebar-foreground">
+                            <span className="truncate text-[15px] font-bold tracking-tight text-sidebar-foreground leading-none">
                                 {brand.name}
                             </span>
                         )}
                         {brand.tagline && (
-                            <span className="truncate text-[11px] font-medium uppercase tracking-wide text-sidebar-foreground/50">
+                            <span className="truncate text-[10px] font-semibold uppercase tracking-wider text-sidebar-foreground/50 leading-none">
                                 {brand.tagline}
                             </span>
                         )}

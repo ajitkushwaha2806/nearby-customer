@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { SidebarService } from "../services/sidebar.service";
-import {  SidebarGroup,  SidebarGroupLabel,  SidebarMenu,  SidebarMenuButton,  SidebarMenuItem } from "@/components/ui/sidebar";
+import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar";
 
 export function SidebarNav({ activePath = "/" }) {
     const items = SidebarService.getNavItems();
@@ -18,18 +18,18 @@ export function SidebarNav({ activePath = "/" }) {
 
                     return (
                         <SidebarMenuItem key={item.id}>
-                            <SidebarMenuButton 
+                            <SidebarMenuButton
                                 render={<a href={item.href} />}
-                                isActive={isActive} 
+                                isActive={isActive}
                                 tooltip={item.label}
                                 className={cn(
-                                    "relative flex items-center gap-3 rounded-md px-3 py-4 text-[15px] transition-all duration-300 overflow-hidden group",
-                                    isActive 
-                                        ? "bg-neutral-200/40 backdrop-blur-md border border-white/60 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] text-neutral-900 font-semibold" 
-                                        : "font-medium text-neutral-500 hover:bg-neutral-100/60 hover:text-neutral-900 border border-transparent"
+                                    "relative flex h-auto items-center gap-3 rounded-[5px] px-3 py-2.5 text-[14px] font-medium transition-all duration-200 ease-in-out group",
+                                    isActive
+                                        ? "bg-orange-500! text-white! shadow-md! shadow-orange-500/20! font-bold! border-0!"
+                                        : "text-gray-600 hover:bg-white dark:text-gray-400 dark:hover:bg-zinc-800/80 hover:text-gray-950 dark:hover:text-white border border-transparent shadow-none hover:shadow-sm hover:shadow-black/[0.03]"
                                 )}
                             >
-                                <Icon className={cn("size-5", isActive ? "text-neutral-900" : "text-neutral-400")} strokeWidth={isActive ? 2.5 : 2} />
+                                <Icon className={cn("size-[18px] transition-transform duration-200 group-hover:scale-105", isActive ? "text-white!" : "text-gray-400 dark:text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-300")} strokeWidth={isActive ? 2.5 : 2} />
                                 <span>{item.label}</span>
                             </SidebarMenuButton>
                         </SidebarMenuItem>
