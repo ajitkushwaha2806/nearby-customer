@@ -45,7 +45,7 @@ export const SidebarService = {
             id: "home",
             label: "Home",
             icon: HomeIcon,
-            href: "/home",
+            href: "/",
         },
         {
             id: "menu",

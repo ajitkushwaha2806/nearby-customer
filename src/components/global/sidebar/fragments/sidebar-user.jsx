@@ -1,17 +1,41 @@
 "use client"
+import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { useUser } from "@/hooks/useUser"
+import { useRouter } from "next/navigation"
+import { clearUser } from "@/store/slices/userSlice"
+import { AuthService } from "@/services/frontend/auth.service"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from "@/components/ui/sidebar"
-import { ChevronRightIcon, BadgeCheckIcon, LogOutIcon, LogInIcon, UserPlusIcon, UserIcon, SettingsIcon } from "lucide-react"
+import { ChevronRightIcon, BadgeCheckIcon, LogOutIcon, LogInIcon, UserPlusIcon, UserIcon, SettingsIcon, Loader2 } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
-export function NavUser({ user, onLogout }) {
+export function NavUser() {
+    const { user } = useUser()
+    const dispatch = useDispatch()
     const { isMobile } = useSidebar()
+    const router = useRouter()
+    const [isLoggingOut, setIsLoggingOut] = useState(false)
+
+    const handleLogout = async () => {
+        try {
+            setIsLoggingOut(true)
+            await AuthService.logout()
+            dispatch(clearUser())
+            router.push("/login")
+            router.refresh()
+        } catch (error) {
+            console.error("Logout failed:", error)
+            setIsLoggingOut(false)
+        }
+    }
+
     if (!user) {
         return (
             <SidebarMenu>
                 <SidebarMenuItem className="grid grid-cols-2 gap-2">
                     <SidebarMenuButton
-                        render={<a href="/login" />}
+                        onClick={() => router.push("/login")}
                         className="group flex h-10 items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white text-sm font-medium text-gray-700 font-poppins transition-colors duration-200 hover:bg-gray-50 dark:border-gray-800 dark:bg-transparent dark:text-gray-200 dark:hover:bg-gray-800"
                     >
                         <LogInIcon className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -19,7 +43,7 @@ export function NavUser({ user, onLogout }) {
                     </SidebarMenuButton>
 
                     <SidebarMenuButton
-                        render={<a href="/register" />}
+                        onClick={() => router.push("/register")}
                         className="group flex h-10 items-center justify-center gap-2 rounded-lg bg-orange-500 text-sm font-medium text-white font-poppins shadow-sm transition-colors duration-200 hover:bg-orange-600"
                     >
                         <UserPlusIcon className="size-4 transition-transform duration-200 group-hover:scale-110" />
@@ -54,7 +78,7 @@ export function NavUser({ user, onLogout }) {
                                     </span>
                                     <BadgeCheckIcon className="size-3.5 shrink-0 fill-blue-50 text-blue-500" />
                                 </div>
-                                <span className="truncate text-xs text-gray-500">{user?.email}</span>
+                                <span className="truncate text-xs text-gray-500">{user?.phone}</span>
                             </div>
                             <ChevronRightIcon className="ml-auto size-4 shrink-0 text-gray-400 transition-transform duration-200 group-data-[state=open]:rotate-90" />
                         </SidebarMenuButton>
@@ -82,7 +106,7 @@ export function NavUser({ user, onLogout }) {
                                             </span>
                                             <BadgeCheckIcon className="size-3.5 shrink-0 fill-blue-50 text-blue-500" />
                                         </div>
-                                        <span className="truncate text-xs text-gray-500">{user?.email}</span>
+                                        <span className="truncate text-xs text-gray-500">{user?.phone}</span>
                                     </div>
                                 </div>
                             </DropdownMenuLabel>
@@ -113,13 +137,17 @@ export function NavUser({ user, onLogout }) {
 
                         <DropdownMenuSeparator className="my-1.5 bg-gray-100 dark:bg-gray-800" />
 
-                        <DropdownMenuItem onClick={onLogout} asChild>
+                        <DropdownMenuItem onClick={handleLogout} disabled={isLoggingOut} asChild>
                             <button
                                 type="button"
-                                className="group flex w-full cursor-pointer items-center gap-2.5 rounded-md px-2 py-2 text-sm text-red-600 transition-colors duration-150 hover:bg-red-50 focus:bg-red-50 dark:hover:bg-red-950/40"
+                                className="group flex w-full cursor-pointer items-center gap-2.5 rounded-md px-2 py-2 text-sm text-red-600 transition-colors duration-150 hover:bg-red-50 focus:bg-red-50 dark:hover:bg-red-950/40 disabled:opacity-50"
                             >
-                                <LogOutIcon className="size-4 transition-transform duration-150 group-hover:-translate-x-0.5" />
-                                <span className="font-medium">Log out</span>
+                                {isLoggingOut ? (
+                                    <Loader2 className="size-4 animate-spin" />
+                                ) : (
+                                    <LogOutIcon className="size-4 transition-transform duration-150 group-hover:-translate-x-0.5" />
+                                )}
+                                <span className="font-medium">{isLoggingOut ? "Logging out..." : "Log out"}</span>
                             </button>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
