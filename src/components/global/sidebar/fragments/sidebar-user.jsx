@@ -130,8 +130,8 @@ export function NavUser() {
 
     return (
         <div className="w-full rounded-xl border border-gray-200/80 bg-white p-1.5 shadow-xs transition-all dark:border-zinc-800 dark:bg-zinc-900">
-            <DropdownMenu className="w-full ">
-                <DropdownMenuTrigger className="w-[100%]" asChild>
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
                     <button
                         type="button"
                         className="group flex w-full items-center justify-between gap-3 rounded-lg p-1.5 text-left transition-colors hover:bg-gray-100/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 dark:hover:bg-zinc-800/80"
