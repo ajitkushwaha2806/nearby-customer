@@ -42,7 +42,7 @@ export default function BottomNav() {
                                     type="button"
                                     onClick={() => selectTab(tab)}
                                     aria-current={isActive ? "page" : undefined}
-                                    className="group flex flex-1 flex-col items-center gap-0.5 py-1.5 transition-all duration-200 focus-visible:outline-none"
+                                    className="group flex flex-1 flex-col items-center gap-0.5 py-2 transition-all duration-200 focus-visible:outline-none"
                                 >
                                     <span
                                         className={`flex items-center justify-center transition-all duration-200 ${isActive
@@ -51,7 +51,7 @@ export default function BottomNav() {
                                             }`}
                                     >
                                         <Icon
-                                            className="size-[18px]"
+                                            className="size-[20px]"
                                             strokeWidth={isActive ? 2.5 : 2}
                                         />
                                     </span>

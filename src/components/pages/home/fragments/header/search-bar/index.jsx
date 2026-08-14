@@ -14,26 +14,12 @@ export function SearchBar({
     return (
         <form
             onSubmit={handleSubmit}
-            className="
-        flex
-        h-14
-        min-w-0
-        flex-1
-        items-center
-        rounded-[10px]
-        bg-white
-        px-4
-        shadow-sm
-        ring-1
-        ring-black/[0.03]
-        sm:h-16
-        sm:px-5
-      "
+            className="flex h-11 min-w-0 flex-1 items-center rounded-xl bg-neutral-50/60 px-3.5 border border-gray-150/40 focus-within:bg-white focus-within:border-orange-500 focus-within:ring-2 focus-within:ring-orange-500/10 transition-all duration-200"
         >
             <Search
-                size={27}
+                size={18}
                 strokeWidth={2}
-                className="mr-4 shrink-0 text-neutral-900"
+                className="mr-3 shrink-0 text-neutral-500"
                 aria-hidden="true"
             />
 
@@ -43,38 +29,16 @@ export function SearchBar({
                 onChange={(event) => onChange?.(event.target.value)}
                 placeholder={placeholder}
                 aria-label={placeholder}
-                className="
-          min-w-0
-          flex-1
-          bg-transparent
-          text-sm
-          text-neutral-900
-          outline-none
-          placeholder:text-neutral-400
-          sm:text-base
-        "
+                className="min-w-0 flex-1 bg-transparent text-sm text-neutral-900 outline-none placeholder:text-neutral-400 p-0 border-0 focus:ring-0"
             />
 
             {value && (
                 <button
                     type="submit"
                     aria-label="Submit search"
-                    className="
-            ml-2
-            flex
-            h-9
-            w-9
-            shrink-0
-            items-center
-            justify-center
-            rounded-full
-            bg-neutral-900
-            text-white
-            transition
-            hover:bg-neutral-700
-          "
+                    className="ml-2 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-orange-600 text-white transition hover:bg-orange-700 active:scale-95 cursor-pointer"
                 >
-                    <ArrowRight size={17} />
+                    <ArrowRight size={13} />
                 </button>
             )}
         </form>
