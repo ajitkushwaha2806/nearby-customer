@@ -6,11 +6,11 @@ export function SearchEmptyState() {
     const router = useRouter();
 
     return (
-        <div className="flex flex-col items-center justify-center text-center py-16 px-4 bg-transparent md:bg-white rounded-none md:rounded-2xl border-0 md:border border-gray-150/40 shadow-none md:shadow-xs mt-4">
+        <div className="flex flex-col min-h-[90vh] items-center justify-center text-center py-16 px-4 bg-transparent md:bg-white rounded-none md:rounded-2xl border-0 md:border border-gray-150/40 shadow-none md:shadow-xs mt-4">
             <img
                 src="/assets/images/no-results.png"
                 alt="No results found"
-                className="object-contain mb-6 animate-pulse"
+                className="object-contain mb-6"
             />
             <button
                 type="button"

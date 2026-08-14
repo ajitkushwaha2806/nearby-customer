@@ -79,9 +79,9 @@ const Home = () => {
                         }}
                     />
 
-                    {/* <PromoCarousel />
+                    <PromoCarousel />
                     <CategoryScrollbar />
-                    <MenuLayout.V2 /> */}
+                    <MenuLayout.V2 />
                 </div>
             </SidebarInset>
         </SidebarProvider>
