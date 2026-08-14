@@ -41,4 +41,14 @@ export class AuthService {
             throw new Error(error.response?.data?.message || "Failed to logout");
         }
     }
+
+    static async updateProfile(data, slug = "barbeque-nation") {
+        try {
+            const response = await api.put(API_ENDPOINTS.AUTH.PROFILE(slug), data);
+            return response.data;
+        } catch (error) {
+            console.error("Update profile error:", error);
+            throw new Error(error.response?.data?.message || "Failed to update profile");
+        }
+    }
 }

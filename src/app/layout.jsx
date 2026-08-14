@@ -6,6 +6,7 @@ import StoreProvider from "@/providers/store-provider";
 import ThemeProvider from "@/components/theme-provider";
 import QueryProvider from "@/components/query-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import NavigationWrapper from "@/components/global/navigation-wrapper";
 
 export default function RootLayout({ children }) {
   return (
@@ -18,7 +19,9 @@ export default function RootLayout({ children }) {
           <ThemeProvider>
             <StoreProvider>
               <TooltipProvider>
-                {children}
+                <NavigationWrapper>
+                  {children}
+                </NavigationWrapper>
                 <Toaster richColors position="top-center" />
               </TooltipProvider>
             </StoreProvider>

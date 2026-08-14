@@ -1,14 +1,13 @@
 "use client";
 import { useState } from "react"
+import { useUser } from "@/hooks/useUser";
 import { Bell, ShoppingBag } from "lucide-react";
 import { AppSidebar } from "../../global/sidebar"
-import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar"
 import { ResponsiveHeader } from "./fragments/header"
 import PromoCarousel from "./fragments/promo-carousel"
 import CategoryScrollbar from "./fragments/category-scollbar"
 import { MenuLayout } from "./fragments/menu-layout/fragments"
-import BottomNav from "../../global/sidebar/fragments/bottom-nav";
-import { useUser } from "@/hooks/useUser";
+import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar"
 
 const Home = () => {
     const { user } = useUser();
@@ -78,8 +77,6 @@ const Home = () => {
                     <MenuLayout.V2 /> */}
                 </div>
             </SidebarInset>
-
-            <BottomNav />
         </SidebarProvider>
     )
 }
