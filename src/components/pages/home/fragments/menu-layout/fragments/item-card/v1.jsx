@@ -1,4 +1,4 @@
-import { NO_IMAGE_PLACEHOLDER } from "./helpers/constants";
+import { ItemImage } from "@/components/global/item-image";
 import DiaterySymbol from "@/components/global/diatery-symbol";
 
 const ItemCardV1 = ({ item }) => {
@@ -7,11 +7,10 @@ const ItemCardV1 = ({ item }) => {
     return (
         <article className="group flex w-full flex-col gap-3">
             <div className="relative aspect-[1.15/1] w-full overflow-hidden rounded-[20px] bg-muted shadow-sm">
-                <img
-                    src={item?.image || NO_IMAGE_PLACEHOLDER}
-                    alt={item?.name || "Menu item"}
+                <ItemImage
+                    src={item?.image}
+                    alt={item?.name}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
                 />
             </div>
 

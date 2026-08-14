@@ -1,4 +1,4 @@
-import { NO_IMAGE_PLACEHOLDER } from "./helpers/constants";
+import { ItemImage } from "@/components/global/item-image";
 import DiaterySymbol from "@/components/global/diatery-symbol";
 
 const ItemCardV2 = ({ item }) => {
@@ -38,11 +38,10 @@ const ItemCardV2 = ({ item }) => {
 
             <div className="relative shrink-0 pt-1">
                 <div className="relative h-[130px] w-[130px] overflow-hidden rounded-[16px] bg-gray-50 sm:h-[140px] sm:w-[140px]">
-                    <img
-                        src={item?.image || NO_IMAGE_PLACEHOLDER}
-                        alt={item?.name || "Menu item"}
+                    <ItemImage
+                        src={item?.image}
+                        alt={item?.name}
                         className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                        loading="lazy"
                     />
                 </div>
 
