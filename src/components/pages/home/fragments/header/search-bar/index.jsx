@@ -5,6 +5,7 @@ export function SearchBar({
     value = "",
     onChange,
     onSubmit,
+    onFocus,
 }) {
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -27,6 +28,7 @@ export function SearchBar({
                 type="search"
                 value={value}
                 onChange={(event) => onChange?.(event.target.value)}
+                onFocus={onFocus}
                 placeholder={placeholder}
                 aria-label={placeholder}
                 className="min-w-0 flex-1 bg-transparent text-sm text-neutral-900 outline-none placeholder:text-neutral-400 p-0 border-0 focus:ring-0"

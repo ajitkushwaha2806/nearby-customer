@@ -3,6 +3,7 @@ import { ItemCard } from "./item-card";
 import { useQuery } from "@tanstack/react-query";
 import { MenuService } from "@/services/ui/menu";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { useRestaurant } from "@/hooks/useRestaurant";
 
 const CategorySection = ({ category, slug }) => {
     const { data: itemsGrouped = {}, isPending, isError } = useQuery({
@@ -75,7 +76,8 @@ const CategorySection = ({ category, slug }) => {
     );
 };
 
-const MenuLayoutV1 = ({ slug = "barbeque-nation" }) => {
+const MenuLayoutV1 = () => {
+    const { slug } = useRestaurant();
     const { data: categories = [], isPending, isError } = useQuery({
         queryKey: ["categories", slug],
         queryFn: async () => {

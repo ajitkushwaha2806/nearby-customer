@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react"
 import { useUser } from "@/hooks/useUser";
+import { useRouter } from "next/navigation";
 import { Bell, ShoppingBag } from "lucide-react";
 import { AppSidebar } from "../../global/sidebar"
 import { ResponsiveHeader } from "./fragments/header"
@@ -11,6 +12,7 @@ import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar"
 
 const Home = () => {
     const { user } = useUser();
+    const router = useRouter();
 
     const brandInfo = {
         greeting: (
@@ -64,11 +66,16 @@ const Home = () => {
                         onSearchChange={(value) => {
                             console.log("Search:", value);
                         }}
+                        onSearchFocus={() => {
+                            router.push("/search");
+                        }}
                         onSearchSubmit={(value) => {
-                            console.log("Submit:", value);
+                            if (value?.trim()) {
+                                router.push(`/search?q=${encodeURIComponent(value)}`);
+                            }
                         }}
                         onFilterClick={() => {
-                            console.log("Filters");
+                            router.push(`/search?is_veg=true`);
                         }}
                     />
 

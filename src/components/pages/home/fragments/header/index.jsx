@@ -35,6 +35,7 @@ export function ResponsiveHeader({
     searchValue = "",
     onSearchChange,
     onSearchSubmit,
+    onSearchFocus,
     showSearch = true,
     showFilter = true,
     onFilterClick,
@@ -173,6 +174,7 @@ export function ResponsiveHeader({
                                 value={searchValue}
                                 onChange={onSearchChange}
                                 onSubmit={onSearchSubmit}
+                                onFocus={onSearchFocus}
                             />
                             {showFilter && (
                                 <FilterButton

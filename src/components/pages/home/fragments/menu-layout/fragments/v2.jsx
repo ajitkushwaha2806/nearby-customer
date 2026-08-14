@@ -2,6 +2,7 @@
 import { ItemCard } from "./item-card";
 import { useQuery } from "@tanstack/react-query";
 import { MenuService } from "@/services/ui/menu";
+import { useRestaurant } from "@/hooks/useRestaurant";
 
 const CategorySectionV2 = ({ category, slug }) => {
     const { data: itemsGrouped = {}, isPending, isError } = useQuery({
@@ -40,7 +41,8 @@ const CategorySectionV2 = ({ category, slug }) => {
     );
 };
 
-const MenuLayoutV2 = ({ slug = "barbeque-nation" }) => {
+const MenuLayoutV2 = () => {
+    const { slug } = useRestaurant();
     const { data: categories = [], isPending, isError } = useQuery({
         queryKey: ["categories", slug],
         queryFn: async () => {

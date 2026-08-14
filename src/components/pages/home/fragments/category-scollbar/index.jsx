@@ -1,12 +1,11 @@
 "use client";
-
 import { MenuService } from "@/services/ui/menu";
 import { useQuery } from "@tanstack/react-query";
+import { useRestaurant } from "@/hooks/useRestaurant";
 import { CategoryCard } from "./fragments/category-card";
 
-export const CategoryScrollbar = ({
-    slug = "barbeque-nation",
-}) => {
+export const CategoryScrollbar = () => {
+    const { slug } = useRestaurant();
     const {
         data: categories = [],
         isPending,
