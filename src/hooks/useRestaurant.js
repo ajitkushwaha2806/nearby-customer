@@ -4,13 +4,13 @@ import api from "@/lib/api/axiosInstance";
 export function useRestaurant() {
     let slug = "shreejees-oshiwara";
 
-    // if (typeof window !== "undefined") {
-    //     const hostname = window.location.hostname;
-    //     const parts = hostname.split(".");
-    //     if (parts.length > 0 && parts[0] !== "localhost" && parts[0] !== "www" && parts[0] !== "127") {
-    //         slug = parts[0];
-    //     }
-    // }
+    if (typeof window !== "undefined") {
+        const hostname = window.location.hostname;
+        const parts = hostname.split(".");
+        if (parts.length > 0 && parts[0] !== "localhost" && parts[0] !== "www" && parts[0] !== "127") {
+            slug = parts[0];
+        }
+    }
 
     const { data: restaurant, isLoading, isError, error } = useQuery({
         queryKey: ["restaurant", slug],
