@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react"
 import { useUser } from "@/hooks/useUser";
 import { useRouter } from "next/navigation";
+import Footer from "@/components/global/footer"
 import { Bell, ShoppingBag } from "lucide-react";
 import { AppSidebar } from "../../global/sidebar"
 import { ResponsiveHeader } from "./fragments/header"
@@ -82,6 +82,7 @@ const Home = () => {
                     <PromoCarousel />
                     <CategoryScrollbar />
                     <MenuLayout.V2 />
+                    <Footer />
                 </div>
             </SidebarInset>
         </SidebarProvider>

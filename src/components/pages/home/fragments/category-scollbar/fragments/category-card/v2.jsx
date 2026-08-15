@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-import { NO_IMAGE_PLACEHOLDER } from "./helpers/constants";
+import { ItemImage } from "@/components/global/item-image";
 
 const CategoryCardV2 = ({ category }) => {
     return (
@@ -10,12 +9,10 @@ const CategoryCardV2 = ({ category }) => {
         >
             <div className="relative flex aspect-square w-full items-center justify-center rounded-2xl bg-gradient-to-tr from-border/50 to-border/20 p-[2px] transition-all duration-300 ease-out group-hover:scale-105 group-hover:from-primary/80 group-hover:to-primary/30 group-hover:shadow-lg group-hover:shadow-primary/20 group-active:scale-95">
                 <div className="relative h-full w-full overflow-hidden rounded-[14px] border-[2.5px] border-background bg-muted">
-                    <Image
-                        src={category?.image || NO_IMAGE_PLACEHOLDER}
+                    <ItemImage
+                        src={category?.image}
                         alt={category?.name || "Category"}
-                        fill
-                        sizes="(max-width: 640px) 84px, 96px"
-                        className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
+                        className="h-full w-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
                     />
                 </div>
             </div>
